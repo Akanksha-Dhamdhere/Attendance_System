@@ -1,0 +1,131 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-image: url("/college1_img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home-overlay {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  padding: 35px 20px;
+  background: linear-gradient(
+    rgba(4, 20, 43, 0.62),
+    rgba(4, 20, 43, 0.72)
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.college-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+.home-overlay > h1 {
+  color: white;
+  text-align: center;
+  font-size: clamp(26px, 4vw, 42px);
+}
+
+.college-name {
+  color: white;
+  text-align: center;
+  font-size: clamp(15px, 2vw, 19px);
+  line-height: 1.8;
+}
+
+.login-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  width: 100%;
+  max-width: 760px;
+}
+
+.login-card {
+  min-height: 245px;
+  padding: 28px 20px;
+  border: none;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #17365d;
+  text-align: center;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 45px;
+}
+
+.login-card h2 {
+  margin: 14px 0 10px;
+  font-size: 23px;
+}
+
+.login-card p {
+  margin-bottom: 20px;
+  color: #526276;
+  line-height: 1.6;
+}
+
+.card-action {
+  display: inline-block;
+  padding: 10px 23px;
+  border-radius: 8px;
+  background: #17365d;
+  color: white;
+}
+
+.home-overlay footer {
+  color: white;
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .login-options {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
+
+  .home-overlay {
+    padding: 28px 16px;
+  }
+}

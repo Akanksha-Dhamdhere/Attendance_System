@@ -1,0 +1,387 @@
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================
+   MAIN DASHBOARD
+========================= */
+
+.dashboard {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 35px 20px 25px;
+
+  background-image: url("/college1_img.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Background overlay */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(35, 91, 151, 0.20);
+}
+
+/* Main content container */
+
+.content {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+/* =========================
+   COLLEGE HEADER
+========================= */
+
+.college-header {
+  width: 100%;
+  max-width: 1000px;
+  min-height: 145px;
+
+  margin: 0 auto;
+  padding: 16px 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 22px;
+
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.93);
+  backdrop-filter: blur(12px);
+
+  box-shadow: 0 8px 25px rgba(15, 48, 86, 0.15);
+}
+
+/* College logo */
+
+.college-logo {
+  width: 85px;
+  height: 85px;
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.college-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Header text */
+
+.header-details {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  color: #123260;
+}
+
+.project-label {
+  font-size: 15px;
+  font-weight: 500;
+
+  padding-bottom: 7px;
+  margin-bottom: 10px;
+
+  border-bottom: 1px solid #cbd8e8;
+}
+
+.header-details h1 {
+  font-size: clamp(19px, 2vw, 27px);
+  font-weight: 750;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.college-location {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #244773;
+}
+
+/* =========================
+   DASHBOARD CARDS
+========================= */
+
+.login-options {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 28px;
+
+  margin: 28px auto 0;
+}
+
+.option-card {
+  width: 300px;
+  min-height: 315px;
+
+  padding: 24px 22px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+
+  cursor: pointer;
+  font-family: inherit;
+
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 25px rgba(15, 48, 86, 0.16);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 32px rgba(15, 48, 86, 0.25);
+}
+
+.option-card:focus-visible {
+  outline: 3px solid #f5b942;
+  outline-offset: 4px;
+}
+
+/* Teacher card */
+
+.teacher-card {
+  background: rgba(240, 247, 255, 0.95);
+  color: #12417e;
+}
+
+/* Student card */
+
+.student-card {
+  background: rgba(235, 250, 246, 0.95);
+  color: #15585b;
+}
+
+/* Card icons */
+
+.card-icon {
+  display: block;
+  font-size: 62px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+/* Card headings */
+
+.option-card h2 {
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Card descriptions */
+
+.option-card p {
+  width: 100%;
+  max-width: 250px;
+  min-height: 48px;
+
+  font-size: 15px;
+  line-height: 1.55;
+
+  color: #49627f;
+}
+
+/* Arrow buttons */
+
+.arrow {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 18px;
+  border-radius: 50%;
+
+  color: #ffffff;
+  background: #164681;
+
+  font-size: 28px;
+  line-height: 1;
+
+  transition: transform 0.3s ease;
+}
+
+.student-card .arrow {
+  background: #17666a;
+}
+
+.option-card:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  margin-top: 25px;
+  padding: 8px;
+
+  text-align: center;
+  color: #ffffff;
+
+  font-size: 13px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* =========================
+   TABLET RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 25px 16px;
+  }
+
+  .college-header {
+    min-height: 120px;
+    gap: 14px;
+    padding: 15px;
+  }
+
+  .college-logo {
+    width: 65px;
+    height: 65px;
+  }
+
+  .header-details h1 {
+    font-size: 20px;
+  }
+
+  .college-location {
+    font-size: 16px;
+  }
+
+  .project-label {
+    font-size: 14px;
+  }
+
+  .login-options {
+    gap: 18px;
+    margin-top: 24px;
+  }
+
+  .option-card {
+    width: 46%;
+    min-height: 285px;
+    padding: 18px 12px;
+  }
+
+  .card-icon {
+    font-size: 55px;
+  }
+
+  .option-card h2 {
+    font-size: 20px;
+  }
+
+  .option-card p {
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 520px) {
+  .dashboard {
+    padding: 18px 14px;
+  }
+
+  .college-header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px 12px;
+  }
+
+  .college-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  .header-details h1 {
+    font-size: 20px;
+  }
+
+  .college-location {
+    font-size: 16px;
+  }
+
+  .login-options {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin-top: 22px;
+  }
+
+  .option-card {
+    width: 100%;
+    max-width: 320px;
+    min-height: 265px;
+    padding: 20px;
+  }
+
+  .card-icon {
+    font-size: 58px;
+  }
+
+  .option-card h2 {
+    font-size: 22px;
+  }
+
+  .footer {
+    line-height: 1.6;
+  }
+}
